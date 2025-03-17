@@ -1,0 +1,29 @@
+﻿# Ignorar archivos binarios y de compilación
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+
+# Ignorar archivos de usuario y configuración local
+*.user
+*.suo
+*.userprefs
+*.vs/
+
+# Ignorar archivos de paquetes NuGet
+packages/
+.nuget/
+*.nupkg
+
+# Ignorar archivos de configuración de Rider
+.idea/
+*.sln.iml
+*.csproj.iml
+
+# Ignorar archivos de logs y temporales
+*.log
+*.tmp
+*.temp
+
