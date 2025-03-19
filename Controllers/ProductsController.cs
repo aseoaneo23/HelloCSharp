@@ -22,13 +22,14 @@ namespace ProductsApi.Controllers
             this.dbContext = dbContext;
         }
         
+        [Route("getAllProducts")]
         [HttpGet]
         public IActionResult GetAllProducts()
         {
             var allProducts = dbContext.Products.ToList();
             return Ok(allProducts);
         }
-
+        [Route("addProducts")]
         [HttpPost]
         public IActionResult AddProduct(AddProductDto productDto)
         {
