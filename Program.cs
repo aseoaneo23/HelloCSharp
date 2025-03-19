@@ -44,11 +44,6 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityRequirement(requirement);
 });
 
-builder.Services.AddScoped<ISanitizer, SanitizeImpl>();
-builder.Services.AddScoped<ProductValidator>();
-builder.Services.AddScoped<ProductRepository>();
-builder.Services.AddScoped<ProductService>();
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
