@@ -3,6 +3,9 @@ using ProductsApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using ProductsApi.Authentication;
+using ProductsApi.Data.Repositories;
+using ProductsApi.Services;
+using ProductsApi.Services.utils;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,6 +46,12 @@ builder.Services.AddSwaggerGen(c =>
     };
     c.AddSecurityRequirement(requirement);
 });
+
+builder.Services.AddScoped<ProductRepository>();
+builder.Services.AddScoped<ProductValidator>();
+builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<ISanitizer, SanitizeImpl>();
+
 
 var app = builder.Build();
 
